@@ -1,0 +1,22 @@
+# only cookie based sessions are allowed
+php_flag session.use_trans_sid off
+php_flag session.use_only_cookies on
+
+# no directory browsing
+Options -Indexes
+
+# turning on rewrite engine
+RewriteEngine On
+
+# getting rid of www. at the begining of url - for seo purposes
+RewriteCond %{HTTP_HOST} ^(www\.)(.*)$ [NC]
+RewriteRule (.*) http://%2/$1 [R=301,L]
+
+# all non-static requests hit index.php file
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule .* index.php  [L]
+
+# caching all static requests by browser - requires headers_module 4 apache
+Header set Cache-Control "max-age=172800, public, must-revalidate"
+

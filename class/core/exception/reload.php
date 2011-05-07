@@ -1,0 +1,9 @@
+<?php
+
+/**
+ * Reload exception class.
+ *
+ * @author Bartlomiej Biskupek <bartlomiej.biskupek@gmail.com>
+ */
+class CoreExceptionReload extends Exception {
+}
