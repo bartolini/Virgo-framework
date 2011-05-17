@@ -1,6 +1,8 @@
 This is PHP5 OOP MVC framework.
 Very easy to use, fast, light and secure.
 
+FOR BASIC INFO ABOUT FRAMEWORK USAGE PLEASE CHECK 'TUTORIAL' BRANCH.
+
 Basic features:
 - full MVC
 - integrated with smarty template engine
