@@ -62,7 +62,6 @@ abstract class CoreFactorizableAutosave extends CoreFactorizable {
     /**
      * Abstract method - actual data saving.
      */
-    protected abstract function saveData() {
-    }
+    protected abstract function saveData();
 
 }
