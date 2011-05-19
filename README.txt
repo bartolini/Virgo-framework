@@ -1,7 +1,12 @@
 This is PHP5 OOP MVC framework.
 Very easy to use, fast, light and secure.
 
-FOR BASIC INFO ABOUT FRAMEWORK USAGE PLEASE CHECK 'TUTORIAL' BRANCH.
+- FOR BASIC INFO ABOUT FRAMEWORK USAGE PLEASE CHECK 'TUTORIAL' BRANCH.
+- THIS FRAMEWORK IS USING APACHE HEADERS MODULE
+    if you're receiving 500 error please to following:
+        a) install apache headers module
+        - OR -
+        b) comment the last line of public/.htaccess file.
 
 Basic features:
 - full MVC
