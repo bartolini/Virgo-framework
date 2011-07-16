@@ -114,6 +114,24 @@ abstract class CorePage {
     }
 
     /**
+     * Redirects to given url.
+     *
+     * @param string $url
+     */
+    public function redirect($url) {
+        header("Location: ".$url);
+        die();
+    }
+
+    /**
+     * Reloads page.
+     */
+    public function reload()
+    {
+        $this->redirect($this->request);
+    }
+
+    /**
      * Renders page modules and then whole page.
      */
     public function render() {
