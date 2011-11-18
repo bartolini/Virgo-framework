@@ -1,13 +1,6 @@
 This is PHP5 OOP MVC framework.
 Very easy to use, fast, light and secure.
 
-- FOR BASIC INFO ABOUT FRAMEWORK USAGE PLEASE CHECK 'TUTORIAL' BRANCH.
-- THIS FRAMEWORK IS USING APACHE HEADERS MODULE
-    if you're receiving 500 error please to following:
-        a) install apache headers module
-        - OR -
-        b) comment the last line of public/.htaccess file.
-
 Basic features:
 - full MVC
 - integrated with smarty template engine
@@ -20,10 +13,9 @@ Basic features:
 - very easy to use php-to-javascript variables passing 
 - class autoloading with as many autoloaders as you need (very easily can be integrated with Zend and PEAR classes)
 - support for scripts and cronjobs so it's very easy to use models and logic already developed for your web environment
-- modular architecture allows you to save time and build reusable blocks on your website (called modules for this purpose)
+- modular architecture allows you to save time and build reusable blocks on your website
 - SEO friendly
-- builded with best practises.
+- engineered with best practises.
 
 ... and much more!
 
-Tutorial will be added very soon.

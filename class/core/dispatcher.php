@@ -104,12 +104,6 @@ class CoreDispatcher {
                 $delegations++;
                 $delegated = true;
                 $pageClassName = $exception->getMessage();
-            } catch (CoreExceptionRedirect $exception) {
-                header("Location: ".$exception->getMessage());
-                die();
-            } catch (CoreExceptionReload $exception) {
-                header("Location: ".$pageRequest);
-                die();
             }
         } while ($delegated);
     }
