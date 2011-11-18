@@ -95,7 +95,7 @@ class CoreDispatcher {
             try {
                 $page = new $pageClassName();
                 $page->setRequest($pageRequest);
-                $page->render();
+                $page->display();
             } catch (CoreExceptionDelegate $exception) {
                 if ($delegations > self::MAX_DELEGATIONS) {
                     throw new CoreExceptionFramework("Max delegations of ".self::MAX_DELEGATIONS." reached!");

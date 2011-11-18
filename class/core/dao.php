@@ -51,5 +51,4 @@ class CoreDao {
      */
     private function  __clone() {
     }
-
 }
