@@ -84,13 +84,13 @@ abstract class CoreBlock {
 	/**
 	 * Block constructor.
 	 * 
-	 * @param array $parameters = array()
+	 * @param mixed $parameter = null
 	 */
-	public function __construct($parameters = array()) {
+	public function __construct($parameter = null) {
 		$this->config = CoreConfig::object();
 		$this->meta = new CoreContainer();
-		if (!empty($parameters)) {
-			$this->setParameters($parameters);
+		if (!is_null($parameter)) {
+			$this->setParameter($parameter);
 		}
 		if (is_null($this->template)) {
 			$this->template = strtolower(preg_replace('/([a-z])([0-9]|[A-Z])/', '$1/$2', get_class($this)));
@@ -225,12 +225,12 @@ abstract class CoreBlock {
 	}
 
 	/**
-	 * Sets extra parameters for block.
-	 * Called from constructor only if parameters were given.
+	 * Sets extra parameter for block.
+	 * Called from constructor only if parameter given.
 	 * 
-	 * @param array $parameters 
+	 * @param mixed $parameter 
 	 */
-	protected function setParameters($parameters) {
+	protected function setParameter($parameter) {
 	}
 
 	/**
