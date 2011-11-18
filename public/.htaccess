@@ -17,6 +17,3 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule .* index.php  [L]
 
-# caching all static requests by browser - requires headers_module 4 apache
-Header set Cache-Control "max-age=172800, public, must-revalidate"
-

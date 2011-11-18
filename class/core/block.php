@@ -33,7 +33,6 @@ abstract class CoreBlock {
 			$this->template = strtolower(preg_replace('/([a-z])([0-9]|[A-Z])/', '$1/$2', get_class($this)));
 		}
 		$this->setUp();
-		$this->build();
 		ob_start();
 	}
 	
@@ -51,6 +50,9 @@ abstract class CoreBlock {
 		$this->request = $request;
 		$this->requestExploded = $requestExploded;
 		$this->parameter = array_pop($requestExploded);
+	}
+
+	public function build() {
 	}
 
 	public function redirect($url) {
@@ -73,6 +75,7 @@ abstract class CoreBlock {
 	protected function addBlock($field, CoreBlock $block) {
 		$this->initializeField($field);
 		$block->setRequest($this->request);
+		$block->build();
 		$this->data[$field] .= $block->render();
 	}
 
@@ -87,9 +90,6 @@ abstract class CoreBlock {
 	}
 
 	protected function setUp() {
-	}
-
-	protected function build() {
 	}
 
 	protected function render() {
