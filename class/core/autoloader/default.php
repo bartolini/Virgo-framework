@@ -14,9 +14,8 @@ class CoreAutoloaderDefault extends CoreAutoloader {
      * @return string
      */
     public function getFileName($className) {
-        $fileName = FRAME_PATH."/class/";
-        $fileName .= preg_replace('/([a-z])([0-9]|[A-Z])/', '$1/$2', $className);
-        $fileName = strtolower($fileName).".php";
+        $fileName = preg_replace('/([a-z])([0-9]|[A-Z])/', '$1/$2', $className);
+        $fileName = FRAME_PATH."/class/".strtolower($fileName).".php";
         return $fileName;
     }
 
