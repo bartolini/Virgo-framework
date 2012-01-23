@@ -50,7 +50,7 @@ class CoreConfig extends stdClass {
         if (file_exists($subConfigFilename.'.php')) {
 				    include $subConfigFilename.'.php';
 				} elseif (file_exists($subConfigFilename.'.ini')) {
-						$config = parse_ini_file($subConfigFilename.'.ini');
+						$config = parse_ini_file($subConfigFilename.'.ini', true);
         } else {
             throw new RuntimeException("Config '{$subConfigFilename}' not found!");
 				}
