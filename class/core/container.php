@@ -30,16 +30,22 @@ class CoreContainer {
      *
      * @param string $key
      * @param mixed $data
+     * @param boolean $noDuplicates = false
      */
-    public function append($key, $data) {
+    public function append($key, $data, $noDuplicates = false) {
         if (!isset($this->container[$key])) {
             $this->set($key, $data);
             return;
         }
+
         $this->checkData($data);
+
         if (!is_array($this->container[$key])) {
             $this->container[$key] = array($this->container[$key]);
+        } elseif (in_array($data, $this->container[$key]) && $noDuplicates) {
+            return;
         }
+
         array_push($this->container[$key], $data);
     }
 
