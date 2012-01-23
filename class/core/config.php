@@ -41,14 +41,20 @@ class CoreConfig extends stdClass {
      * @return mixed
      */
     public function getConfig($name) {
-        $subConfigFilename = $this->subConfigs.$name.".php";
+        $subConfigFilename = $this->subConfigs.$name;
+
         if (isset($this->configs[$subConfigFilename])) {
             return $this->configs[$subConfigFilename];
         }
-        if (!file_exists($subConfigFilename)) {
-            throw new CoreExceptionFramework("Config file {$subConfigFilename} not found!");
-        }
-        include $subConfigFilename;
+
+        if (file_exists($subConfigFilename.'.php')) {
+				    include $subConfigFilename.'.php';
+				} elseif (file_exists($subConfigFilename.'.ini')) {
+						$config = parse_ini_file($subConfigFilename.'.ini');
+        } else {
+            throw new RuntimeException("Config '{$subConfigFilename}' not found!");
+				}
+
         $this->configs[$subConfigFilename] = isset($config) ? $config : null;
         return $config;
     }

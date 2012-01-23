@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Autoloader for Zend and PEAR classes.
+ * Autoloader for Zend classes.
  *
  * @author Bartlomiej Biskupek <bartlomiej.biskupek@gmail.com>
  */

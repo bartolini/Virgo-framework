@@ -41,7 +41,7 @@ final class CoreUrlTemplate {
         preg_match_all("/:([a-z0-9]+)/", $url, $matches);
         foreach($matches[1] as $match) {
             if (!isset($params[$match])) {
-                throw new CoreExceptionFramework("Undefined URL parameter: '{$match}'.");
+                throw new RuntimeException("Undefined URL parameter: '{$match}'.");
             }
             $url = str_replace(":{$match}", $params[$match], $url);
         }

@@ -53,7 +53,7 @@ final class CoreUrlMapper {
      */
     public function getUrl($name, $parameters = array()) {
         if (!isset ($this->urlTemplates[$name])) {
-            throw new CoreExceptionFramework("No url template defined.");
+            throw new RuntimeException("No url template defined.");
         }
         return $this->urlTemplates[$name]->getUrl($parameters);
     }

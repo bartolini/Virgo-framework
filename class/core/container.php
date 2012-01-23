@@ -120,7 +120,7 @@ class CoreContainer {
      */
     private function checkData($data) {
         if (is_object($data)) {
-            throw new CoreExceptionFramework("Simple data types allowed only!");
+            throw new RuntimeException("Simple data types allowed only!");
         } elseif (is_array($data)) {
             foreach($data as $value) {
                 $this->checkData($value);

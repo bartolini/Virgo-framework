@@ -64,11 +64,8 @@ class CoreDispatcher {
             $pageRequest = $function($pageRequest);
         }
 
-        // loading pages map:
-        $pagesInitData = parse_ini_file(CoreConfig::object()->pagesMap);
-
         // matching page class:
-        foreach ($pagesInitData as $pageClass => $urlPattern) {
+        foreach (CoreConfig::object()->getConfig('pages') as $pageClass => $urlPattern) {
             $wildcardPatterns = array_keys(self::$wildcards);
             $wildcardRegexps = array_values(self::$wildcards);
             $wildcardPatterns[] = "/";
@@ -99,7 +96,7 @@ class CoreDispatcher {
                 $page->display();
             } catch (CoreExceptionDelegate $exception) {
                 if ($delegations > self::MAX_DELEGATIONS) {
-                    throw new CoreExceptionFramework("Max delegations of ".self::MAX_DELEGATIONS." reached!");
+                    throw new RuntimeException("Max delegations of ".self::MAX_DELEGATIONS." reached!");
                 }
                 $delegations++;
                 $delegated = true;

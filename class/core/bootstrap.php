@@ -20,7 +20,7 @@ abstract class CoreBootstrap {
      */
     public function  __construct() {
         if (self::$created) {
-            throw new CoreExceptionFramework("Application has been initialized already!");
+            throw new RuntimeException("Application has been initialized already!");
         }
         self::$created = true;
         $reflection = new ReflectionObject($this);

@@ -37,7 +37,7 @@ abstract class CoreAutoloader {
                 return;
             }
         }
-        throw new CoreExceptionFramework("Class {$className} not found!");
+        throw new RuntimeException("Class {$className} not found!");
     }
 
     /**

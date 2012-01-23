@@ -20,17 +20,18 @@ class CoreDao {
      * @param string $connectionName
      * @return PDO
      */
-    public static function connection($connectionName = "main") {
+    public static function connection($connectionName = "default") {
         if (!isset(self::$instances[$connectionName])) {
             try {
-                $dbConfig = CoreConfig::object()->dbConfig[$connectionName];
+								$databases = CoreConfig::object()->getConfig('databases');
+								$dbConfig = $databases[$connectionName];
                 $pdo = self::$instances[$connectionName] = new PDO(
                     "{$dbConfig['dbSchema']}:dbname={$dbConfig['dbDatabase']};host={$dbConfig['dbHostname']}",
                     $dbConfig["dbUsername"],
                     $dbConfig["dbPassword"]
                 );
             } catch (Exception $exception) {
-                throw new CoreExceptionFramework("Database connection error!");
+                throw new RuntimeException("Database connection error!");
             }
 
             $pdo->query('SET NAMES utf8');
