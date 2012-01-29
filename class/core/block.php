@@ -154,7 +154,7 @@ abstract class CoreBlock {
 	 * @param string $fileName 
 	 */
 	protected function addCss($fileName) {
-		$this->meta->append("css", "<link href='{$fileName}' type='text/css' rel='stylesheet'>");
+		$this->meta->append("css", "<link href='{$fileName}' type='text/css' rel='stylesheet'>", true);
 	}
 
 	/**
@@ -163,7 +163,7 @@ abstract class CoreBlock {
 	 * @param string $fileName 
 	 */
 	protected function addScript($fileName) {
-		$this->meta->append("js", "<script type='text/javascript' src='{$fileName}'></script>");
+		$this->meta->append("js", "<script type='text/javascript' src='{$fileName}'></script>", true);
 	}
 
 	/**
