@@ -6,7 +6,7 @@
  * @author Bartlomiej Biskupek <bartlomiej.biskupek@gmail.com>
  */
 class CoreAutoloaderDefault extends CoreAutoloader {
-    
+
     /**
      * Returns filename.
      *

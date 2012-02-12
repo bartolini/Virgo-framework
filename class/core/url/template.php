@@ -51,7 +51,7 @@ final class CoreUrlTemplate {
     /**
      * Normalizes an array.
      *
-     * @param array $params 
+     * @param array $params
      */
     private function normalize($params) {
         if (empty($params)) {

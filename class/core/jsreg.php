@@ -4,14 +4,14 @@
  * Javascript register helper class - singleton.
  *
  * @author Bartlomiej Biskupek <bartlomiej.biskupek@gmail.com>
- * 
+ *
  */
 class CoreJsreg extends stdClass {
 
     /**
      * Config instance.
      *
-     * @var CoreJsreg 
+     * @var CoreJsreg
      */
     private static $instance = null;
 

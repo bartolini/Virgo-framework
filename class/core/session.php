@@ -10,7 +10,7 @@ class CoreSession {
 
     /**
      * True if session has been started.
-     * 
+     *
      * @var boolean
      */
     private static $sessionStarted = false;
@@ -74,7 +74,7 @@ class CoreSession {
      */
     private function  __construct() {
     }
-    
+
     /**
      * Not clonable.
      */

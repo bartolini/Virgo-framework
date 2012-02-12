@@ -4,7 +4,7 @@
  * Application bootstrap abstract class.
  *
  * @author Bartlomiej Biskupek <bartlomiej.biskupek@gmail.com>
- * 
+ *
  */
 abstract class CoreBootstrap {
 
@@ -26,7 +26,7 @@ abstract class CoreBootstrap {
         $reflection = new ReflectionObject($this);
         $methods = $reflection->getMethods(ReflectionMethod::IS_PROTECTED);
         array_filter(
-            $methods, 
+            $methods,
             function($method) {
                 return (bool)preg_match("/^init/", $method->getName());
             }

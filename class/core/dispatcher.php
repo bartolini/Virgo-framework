@@ -4,7 +4,7 @@
  * WWW dispatcher class.
  *
  * @author Bartlomiej Biskupek <bartlomiej.biskupek@gmail.com>
- * 
+ *
  */
 class CoreDispatcher {
 
@@ -33,10 +33,10 @@ class CoreDispatcher {
     private static $preprocess = array();
 
     /**
-     * Adds a wildcard for url parsing. 
-     * 
-     * @param string $wildcard 
-     * @param string $regexp 
+     * Adds a wildcard for url parsing.
+     *
+     * @param string $wildcard
+     * @param string $regexp
      */
     public static function addWildcard($wildcard, $regexp) {
         self::$wildcards[$wildcard] = $regexp;
@@ -44,8 +44,8 @@ class CoreDispatcher {
 
     /**
      * Adds a url preprocess function.
-     * 
-     * @param function $function 
+     *
+     * @param function $function
      */
     public static function addPreprocess($function) {
         self::$preprocess[] = $function;
@@ -92,7 +92,7 @@ class CoreDispatcher {
             try {
                 $page = new $pageClassName();
                 $page->setRequest($pageRequest);
-								$page->build();
+    							$page->build();
                 $page->display();
             } catch (CoreExceptionDelegate $exception) {
                 if ($delegations > self::MAX_DELEGATIONS) {

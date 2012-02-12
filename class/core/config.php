@@ -4,7 +4,7 @@
  * Config object class - singleton.
  *
  * @author Bartlomiej Biskupek <bartlomiej.biskupek@gmail.com>
- * 
+ *
  */
 class CoreConfig extends stdClass {
 
@@ -48,12 +48,12 @@ class CoreConfig extends stdClass {
         }
 
         if (file_exists($subConfigFilename.'.php')) {
-				    include $subConfigFilename.'.php';
-				} elseif (file_exists($subConfigFilename.'.ini')) {
-						$config = parse_ini_file($subConfigFilename.'.ini', true);
+    			    include $subConfigFilename.'.php';
+    			} elseif (file_exists($subConfigFilename.'.ini')) {
+    					$config = parse_ini_file($subConfigFilename.'.ini', true);
         } else {
             throw new RuntimeException("Config '{$subConfigFilename}' not found!");
-				}
+    			}
 
         $this->configs[$subConfigFilename] = isset($config) ? $config : null;
         return $config;

@@ -23,8 +23,8 @@ class CoreDao {
     public static function connection($connectionName = "default") {
         if (!isset(self::$instances[$connectionName])) {
             try {
-								$databases = CoreConfig::object()->getConfig('databases');
-								$dbConfig = $databases[$connectionName];
+    							$databases = CoreConfig::object()->getConfig('databases');
+    							$dbConfig = $databases[$connectionName];
                 $pdo = self::$instances[$connectionName] = new PDO(
                     "{$dbConfig['dbSchema']}:dbname={$dbConfig['dbDatabase']};host={$dbConfig['dbHostname']}",
                     $dbConfig["dbUsername"],

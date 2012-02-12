@@ -38,7 +38,7 @@ final class CoreUrlMapper {
      * Registers url template.
      *
      * @param string $name
-     * @param CoreUrlTemplate $template 
+     * @param CoreUrlTemplate $template
      */
     public function register($name, CoreUrlTemplate $template) {
         $this->urlTemplates[$name] = $template;
