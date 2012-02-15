@@ -36,23 +36,9 @@ abstract class CoreBlock {
     protected $config;
 
     /**
-     * Request parameter.
+     * Request object.
      *
-     * @var string
-     */
-    protected $parameter;
-
-    /**
-     * Exploded request.
-     *
-     * @var array
-     */
-    protected $requestExploded;
-
-    /**
-     * Original request.
-     *
-     * @var string
+     * @var CoreRequest
      */
     protected $request;
 
@@ -119,10 +105,7 @@ abstract class CoreBlock {
      * @param string $request
      */
     public function setRequest($request) {
-    	$requestExploded = explode("/", ltrim($request, "/"));
     	$this->request = $request;
-    	$this->requestExploded = $requestExploded;
-    	$this->parameter = array_pop($requestExploded);
     }
 
     /**
